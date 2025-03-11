@@ -1,7 +1,7 @@
 pytest-homeassistant-custom-component==0.2.0
 homeassistant==2021.2.3
 aiohttp_cors
-carson_living @ git+https://github.com/pbrink231/ha-carson-living@main
+carson_living @ git+https://github.com/pbrink231/python-carson-living@main
 flake8
 pylint
 pytest
