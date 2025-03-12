@@ -24,7 +24,9 @@ Move to setup setup below
 
 ### Manually
 
-If you want to manually install, place files in the custom_components/carson/ folder into path/to/haconfig/custom_components/carson/
+If you want to manually install
+
+Copy files in this repos custom_components/carson/ folder into path/to/haconfig/custom_components/carson/
 
 ### Setup
 
