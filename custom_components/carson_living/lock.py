@@ -2,7 +2,7 @@
 import asyncio
 import logging
 
-from homeassistant.components.lock import OPEN, LockEntity
+from homeassistant.components.lock import LockEntityFeature, LockEntity
 
 from .const import DOMAIN, UNLOCKED_TIMESPAN_SEC
 from .entity import CarsonEntityMixin
@@ -32,7 +32,7 @@ class CarsonLock(CarsonEntityMixin, LockEntity):
     @property
     def supported_features(self):
         """Carson locks support open."""
-        return OPEN
+        return LockEntityFeature.OPEN
 
     @property
     def assumed_state(self):
