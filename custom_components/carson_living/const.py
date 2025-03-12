@@ -1,6 +1,6 @@
 """Constants for the Carson integration."""
 
-DOMAIN = "carson"
+DOMAIN = "carson_living"
 UNLOCKED_TIMESPAN_SEC = 5
 ATTRIBUTION = "provided by Eagle Eye"
 

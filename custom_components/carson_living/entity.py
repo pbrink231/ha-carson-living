@@ -13,15 +13,15 @@ class CarsonEntityMixin:
 
     async def async_added_to_hass(self):
         """Register Entity with config."""
-        self.carson_living_ha_entities[self.unique_id] = self
+        self.carson_ha_entities[self.unique_id] = self
 
     async def async_will_remove_from_hass(self):
         """Deregister Entity with config."""
-        if self.unique_id in self.carson_living_ha_entities:
-            del self.carson_living_ha_entities[self.unique_id]
+        if self.unique_id in self.carson_ha_entities:
+            del self.carson_ha_entities[self.unique_id]
 
     @property
-    def carson_living_ha_entities(self):
+    def carson_ha_entities(self):
         """Return the Ring API objects."""
         return self.hass.data[DOMAIN][self._config_entry_id]["ha_entities"]
 
