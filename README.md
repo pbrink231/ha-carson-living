@@ -14,8 +14,6 @@ Please use this library at your own risk and make sure that you do not violate t
 
 Simpliest way to install is using HACS.
 
-[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fpbrink231%2Fha-carson-living)
-
 Use the button above or go to HACS -> 3 Dots in to right -> Custom repositories
 Repository: https://github.com/pbrink231/ha-carson-living
 Type: Integration
