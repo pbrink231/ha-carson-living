@@ -40,5 +40,8 @@ Copy files in this repos custom_components/carson/ folder into path/to/haconfig/
 
 The carson app should create all the door and camera entities available on your carson account.  At this point you can use them as normal.
 
+![image](https://github.com/user-attachments/assets/aed857ac-e09d-4d9d-bb24-8f6bf79e8b79)
+
+
 
 
