@@ -28,11 +28,11 @@ If you want to manually install, place files in the custom_components/carson/ fo
 
 ### Setup
 
-Go to:
-1) Devices & services
-2) + Add Integration
-3) choose "Carson Living"
-4) Login with your Carson Credentials
+1) Once either HACS or Manually was done (information above)
+2) Devices & services
+3) Add Integration
+4) choose "Carson Living"
+5) Login with your Carson Credentials
 
 ## Usage
 
