@@ -1,17 +1,18 @@
 {
-  "domain": "carson",
-  "name": "Carson",
+  "domain": "carson_living",
+  "name": "Carson Living",
+  "version": "0.1.0",
   "config_flow": true,
-  "documentation": "https://github.com/rado0x54/ha-carson-living/blob/master/README.md",
-  "issue_tracker": "https://github.com/rado0x54/ha-carson-living/issues",
+  "documentation": "https://github.com/pbrink231/ha-carson-living/blob/master/README.md",
+  "issue_tracker": "https://github.com/pbrink231/ha-carson-living/issues",
   "requirements": [
-    "carson_living==0.0.5"
+    "carson_living @ git+https://github.com/pbrink231/python-carson-living@main"
   ],
   "ssdp": [],
   "zeroconf": [],
   "homekit": {},
   "dependencies": [],
   "codeowners": [
-    "@rado0x54"
+    "@pbrink231"
   ]
 }
