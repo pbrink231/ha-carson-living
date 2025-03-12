@@ -15,7 +15,9 @@ Please use this library at your own risk and make sure that you do not violate t
 Simpliest way to install is using HACS.
 
 Use the button above or go to HACS -> 3 Dots in to right -> Custom repositories
+
 Repository: https://github.com/pbrink231/ha-carson-living
+
 Type: Integration
 
 Move to setup setup below
