@@ -1,11 +1,12 @@
 {
   "domain": "carson",
-  "name": "Carson",
+  "name": "Carson Living",
+  "version": "1.0.0",
   "config_flow": true,
   "documentation": "https://github.com/rado0x54/ha-carson-living/blob/master/README.md",
   "issue_tracker": "https://github.com/rado0x54/ha-carson-living/issues",
   "requirements": [
-    "carson_living==0.0.5"
+    "carson_living"
   ],
   "ssdp": [],
   "zeroconf": [],

@@ -3,7 +3,7 @@ from datetime import timedelta
 import io
 import logging
 
-from homeassistant.components.camera import SUPPORT_STREAM, Camera
+from homeassistant.components.camera import CameraEntityFeature, Camera
 from homeassistant.const import ATTR_ATTRIBUTION
 
 from .const import (
@@ -74,7 +74,7 @@ class EagleEyeCamera(CarsonEntityMixin, Camera):
     @property
     def supported_features(self):
         """Return supported features."""
-        return SUPPORT_STREAM
+        return CameraEntityFeature.STREAM
 
     async def stream_source(self):
         """Return the stream source."""

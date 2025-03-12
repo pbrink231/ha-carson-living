@@ -85,10 +85,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
         "ha_entities": {},
     }
 
-    for component in PLATFORMS:
-        hass.async_create_task(
-            hass.config_entries.async_forward_entry_setup(entry, component)
-        )
+    await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
 
     if hass.services.has_service(DOMAIN, "update"):
         return True
