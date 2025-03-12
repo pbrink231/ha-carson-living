@@ -6,7 +6,7 @@ from unittest.mock import patch
 from homeassistant.setup import async_setup_component
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 
-from custom_components.carson import DOMAIN
+from custom_components.carson_living import DOMAIN
 
 CARSON_API_VERSION = "1.4.3"
 CONF_AND_FORM_CREDS = {"username": "foo@bar.com", "password": "bar"}
@@ -22,7 +22,7 @@ async def setup_platform(hass, platform):
             "token": fixture_token(),
         },
     ).add_to_hass(hass)
-    with patch("custom_components.carson.PLATFORMS", [platform]):
+    with patch("custom_components.carson_living.PLATFORMS", [platform]):
         assert await async_setup_component(hass, DOMAIN, {})
     await hass.async_block_till_done()
 

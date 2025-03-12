@@ -23,7 +23,7 @@ async def test_entity_registry(hass, success_requests_mock):  # pylint: disable=
 async def test_entity_registry_een_option_enabled(hass, success_requests_mock):  # pylint: disable=unused-argument
     """Tests that the devices are registered in the entity registry."""
     with patch(
-        "custom_components.carson.camera.get_list_een_option", return_value=True
+        "custom_components.carson_living.camera.get_list_een_option", return_value=True
     ) as mock_setup:
         await setup_platform(hass, CAMERA_DOMAIN)
         entity_registry = await hass.helpers.entity_registry.async_get_registry()

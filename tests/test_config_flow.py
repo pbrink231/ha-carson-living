@@ -3,7 +3,7 @@ from unittest.mock import patch, Mock
 from carson_living import CarsonAuthenticationError, CarsonCommunicationError
 
 from homeassistant import config_entries, setup
-from custom_components.carson.const import CONF_LIST_FROM_EAGLE_EYE, DOMAIN
+from custom_components.carson_living.const import CONF_LIST_FROM_EAGLE_EYE, DOMAIN
 
 from tests.common import MockConfigEntry
 from .common import CONF_AND_FORM_CREDS
@@ -19,12 +19,12 @@ async def test_form(hass):
     assert result["errors"] == {}
 
     with patch(
-        "custom_components.carson.config_flow.CarsonAuth",
+        "custom_components.carson_living.config_flow.CarsonAuth",
         return_value=Mock(update_token=Mock(), token="test-token"),
     ), patch(
-        "custom_components.carson.async_setup", return_value=True
+        "custom_components.carson_living.async_setup", return_value=True
     ) as mock_setup, patch(
-        "custom_components.carson.async_setup_entry", return_value=True,
+        "custom_components.carson_living.async_setup_entry", return_value=True,
     ) as mock_setup_entry:
         result2 = await hass.config_entries.flow.async_configure(
             result["flow_id"], CONF_AND_FORM_CREDS,
@@ -49,7 +49,7 @@ async def test_form_invalid_auth(hass):
     )
 
     with patch(
-        "custom_components.carson.config_flow.CarsonAuth.update_token",
+        "custom_components.carson_living.config_flow.CarsonAuth.update_token",
         side_effect=CarsonAuthenticationError,
     ):
         result2 = await hass.config_entries.flow.async_configure(
@@ -67,7 +67,7 @@ async def test_form_cannot_connect(hass):
     )
 
     with patch(
-        "custom_components.carson.config_flow.CarsonAuth.update_token",
+        "custom_components.carson_living.config_flow.CarsonAuth.update_token",
         side_effect=CarsonCommunicationError,
     ):
         result2 = await hass.config_entries.flow.async_configure(

@@ -6,7 +6,7 @@ from homeassistant.setup import async_setup_component
 
 from pytest_homeassistant_custom_component.common import mock_coro
 
-from custom_components import carson
+from custom_components import carson_living
 from .common import CONF_AND_FORM_CREDS
 
 
@@ -17,14 +17,14 @@ async def test_creating_entry_sets_up_devices(hass, success_requests_mock):  # p
     """Test setting up carson loads device entities."""
 
     with patch(
-        "custom_components.carson.lock.async_setup_entry",
+        "custom_components.carson_living.lock.async_setup_entry",
         return_value=mock_coro(True),
     ) as lock_mock_setup, patch(
-        "custom_components.carson.camera.async_setup_entry",
+        "custom_components.carson_living.camera.async_setup_entry",
         return_value=mock_coro(True),
     ) as camera_mock_setup:
         result = await hass.config_entries.flow.async_init(
-            carson.DOMAIN, context={"source": config_entries.SOURCE_USER}
+            carson_living.DOMAIN, context={"source": config_entries.SOURCE_USER}
         )
         # Confirmation form
         assert result["type"] == data_entry_flow.RESULT_TYPE_FORM
@@ -44,10 +44,10 @@ async def test_configuring_carson_creates_entry(hass, success_requests_mock):  #
     """Test that specifying config will create an entry."""
 
     with patch(
-        "custom_components.carson.async_setup_entry",
+        "custom_components.carson_living.async_setup_entry",
         return_value=mock_coro(True),
     ) as mock_setup:
-        await async_setup_component(hass, carson.DOMAIN, VALID_CONFIG)
+        await async_setup_component(hass, carson_living.DOMAIN, VALID_CONFIG)
         await hass.async_block_till_done()
 
     assert len(mock_setup.mock_calls) == 1
@@ -61,10 +61,10 @@ async def test_configuring_carson_wrong_creds_creates_no_entry(hass, requests_mo
     )
 
     with patch(
-        "custom_components.carson.async_setup_entry",
+        "custom_components.carson_living.async_setup_entry",
         return_value=mock_coro(True),
     ) as mock_setup:
-        await async_setup_component(hass, carson.DOMAIN, VALID_CONFIG)
+        await async_setup_component(hass, carson_living.DOMAIN, VALID_CONFIG)
         await hass.async_block_till_done()
 
     assert len(mock_setup.mock_calls) == 0

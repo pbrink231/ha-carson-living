@@ -52,7 +52,7 @@ async def test_lock_can_be_unlocked(hass, success_requests_mock):
 
     # reduce unlock timespan to 0 to not hold test.
     with patch(
-        "custom_components.carson.lock.CarsonLock.unlocked_timespan",
+        "custom_components.carson_living.lock.CarsonLock.unlocked_timespan",
         return_value=0,
     ) as mock_timespan:
         await hass.services.async_call("lock", "unlock", {"entity_id": "lock.door_1"})
